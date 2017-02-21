@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 
 MAINTAINER arctg70 <simon.zhou@gmail.com>
-# COPY rc.local /etc/rc.local
+COPY rc.local /etc/rc.local
 RUN apt-get update && \
     apt-get install -y --force-yes curl git python && \
     apt-get clean && \
