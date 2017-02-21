@@ -8,7 +8,7 @@ RUN apt-get update && \
     tar xf libsodium-1.0.10.tar.gz && cd libsodium-1.0.10 && \
     ./configure && make -j2 && make install && \
     ldconfig && \
-    apt-get remove -y --force-yes wget build-essential && \
+    apt-get remove -y  wget build-essential && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
