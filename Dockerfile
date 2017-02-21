@@ -3,7 +3,12 @@ FROM ubuntu:trusty
 MAINTAINER arctg70 <simon.zhou@gmail.com>
 #COPY rc.local /etc/rc.local
 RUN apt-get update && \
-    apt-get install -y --force-yes curl git python libsodium18 && \
+    apt-get install -y --force-yes curl git python build-essential wget && \
+    wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz && \
+    tar xf libsodium-1.0.10.tar.gz && cd libsodium-1.0.10 && \
+    ./configure && make -j2 && make install && \
+    ldconfig && \
+    apt-get remove -y  wget build-essential && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
     
