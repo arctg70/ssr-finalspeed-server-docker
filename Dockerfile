@@ -26,4 +26,3 @@ RUN chmod 755 /start.sh
 
 CMD ["sh", "-c", "/start.sh"]
 
-
