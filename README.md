@@ -3,7 +3,9 @@
 docker run -d -p 150:150/udp -p 8388:8388 arctg70/ssr-finalspeed-server-docker
 
 # shadowsocksr config file /shadowsocksr/user-config.json
+
 {
+
     "server": "0.0.0.0",
     "server_ipv6": "::",
     "server_port": 8388,
